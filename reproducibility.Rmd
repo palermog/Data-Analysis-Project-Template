@@ -138,11 +138,11 @@ remotes::install_github("karthik/holepunch", type = "binary")
 
 There are two options for the configuration files necessary for binder:
 
-- Preferred: a DESCRIPTION file and a Dockerfile. Don't worry about the details there, like what a Docker file is. You can find more information from the `holepunch` [documentation] (https://karthik.github.io/holepunch/articles/getting_started.html).
+- a DESCRIPTION file and what's called a Dockerfile.
+
 - an `install.R` file and a `runtime.txt` files. The former has a list of packages to install and the latter a version of R. 
 
-In either case, these will tell binder what needs to be on your virtual computing environment. 
-(Note: making your repository into an R package with a DESCRIPTION file and Dockerfile is generally more efficient; however, I have run into an issue where `holepunch` was generating a blank Dockerfile. The other way will take a LONG time to render, but I've provided it in case you run into that issue.) 
+In either case, these will tell binder what needs to be on your virtual computing environment.
 
 Let's use `holepunch` to generate a DESCRIPTION file and Dockerfile. First, you can use the `options` function to add some data about your project. Change the metadata below to metadata about you and your collaborator(s).
 
