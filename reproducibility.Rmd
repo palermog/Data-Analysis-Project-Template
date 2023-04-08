@@ -90,9 +90,9 @@ Let's take the second option:
 renv::hydrate()
 ```
 
-Now, peek in the "Packages" panel in RStudio. You should see them separated into two headings, one with versions of packages for this project in a "Project Library," separated from those in your "User Library." Versions can differ between these, and the difference. Barring any unforseen inconsistencies in system dependences (more on that in just a moment), you can reasonably expect that the code in this notebook will run the same on your machine as it does on the machine I wrote it on.
+Now, peek in the "Packages" panel in RStudio. You should see them separated into two headings, one with versions of packages for this project in a "Project Library," separated from those in your "User Library." Versions can differ between these, and the difference. Barring any unforeseen inconsistencies in system dependencies (more on that in just a moment), you can reasonably expect that the code in this notebook will run the same on your machine as it does on the machine I wrote it on.
 
-While useful for sharing code with others like this, managing your environments also has benefits to you alone, even if you are working by yourself on something for the time being. This is not limited to anticipating future collaboration, either. Quarantining project dependcies prevents headaches. You can update packages in one project you are working on without worrying about breaking code in another project or mucking up your system's library. Conversely, you can update packages in your system library without worrying code you wrote for old projects will be broken when you return to it at some point.
+While useful for sharing code with others like this, managing your environments also has benefits to you alone, even if you are working by yourself on something for the time being. This is not limited to anticipating future collaboration, either. Isolating projects and their dependencies prevents headaches. You can update packages in one project you are working on without worrying about breaking code in another project or mucking up your system's library. Conversely, you can update packages in your system library without worrying code you wrote for old projects will be broken when you return to it at some point.
 
 How woulud you do this on your own if you weren't from my template? You'd install `renv` to your system profile with `install.packages("renv", type = "binary")`. Before installing any packages specific to your project, you should then run `renv::init()` in the console, which will initialize a new virtual environment for your project.
 
@@ -144,20 +144,29 @@ There are two options for the configuration files necessary for binder:
 In either case, these will tell binder what needs to be on your virtual computing environment. 
 (Note: making your repository into an R package with a DESCRIPTION file and Dockerfile is generally more efficient; however, I have run into an issue where `holepunch` was generating a blank Dockerfile. The other way will take a LONG time to render, but I've provided it in case you run into that issue.) 
 
-Let's use `holepunch` to generate a DESCRIPTION file and Dockerfile.
+Let's use `holepunch` to generate a DESCRIPTION file and Dockerfile. First, you can use the `options` function to add some data about your project. Change the metadata below to metadata about you and your collaborator(s).
 
 ```{r}
-holepunch::write_compendium_description(package = "My Data Analysis Project",
-                             description = "This is your data analysis project compendium",
-                             version = "1.0")
+options(
+  usethis.full_name = "Greg Palermo",
+  usethis.description = list(`Authors@R` = 'person("Greg", "Palermo", email = "gregory.palermo@emory.edu", role = c("aut", "cre"))')
+  )
+
+
+holepunch::write_compendium_description()
 
 # to write a description, with dependencies listed 
-# Make sure that you hit "Enter" in the console!
-# It's good practice to now go fill in the placeholder text.
+# 
 ```
 
+Note in the Files pane that there's now a file called DESCRIPTION. Click on that to open it in a new tab and fill in information about your project.
+
+
 ```{r}
-holepunch::write_dockerfile(maintainer = "yourname", branch = "main") #fill in your name!
+holepunch::write_dockerfile(maintainer = "yourname",
+                            branch = "main", 
+                            base = "rocker/binder") 
+
 # To write a dockerfile. It will automatically pick the date of the last modified file, match it to 
 # that version of R and add it here. You can override this by passing r_date to some arbitrary date
 # (but one for which a R version exists).
@@ -165,14 +174,20 @@ holepunch::write_dockerfile(maintainer = "yourname", branch = "main") #fill in y
 # Please note: if you run into an error about `rlang`, you might want to run `install.packages("rlang") to update it. You'll need to restart your R session.
 ```
 
-Finally, let's generate a swanky badge for your repository's ReadMe (we could just copy/paste the remote URL after we binderized, but this is cooler).
 
+```{r}
+holepunch::write_install()
+holepunch::write_runtime()
+```
+
+
+Finally, let's generate a swanky badge for your repository's ReadMe (we could just copy/paste the remote URL after we binderized, but this is cooler).
 
 ```{r}
 holepunch::generate_badge(branch="main")
 ```
 
-The first time, we will have to paste the code generated in the console into `README.md`. From there on out, the function will replace it.
+If you already have a `README.md` that has a section for badges, such as if you generate one with the `usethis::use_readme_md()` function, `holepunch` . Otherwise, you will be prompted to copy/paste the code generated in the console into the file. From there on out, the function will replace it.
 
 ```{r}
 path = getwd()
@@ -209,7 +224,7 @@ If you really want to get into the weeds, you can also customize the developer's
 
 ## Working on a bigger data analysis project
 
-Another and more robust solution than `sketchy` is the [`rrtools` package](https://github.com/benmarwick/rrtools) described [here](https://annakrystalli.me/rrresearchACCE20/creating-a-research-compendium-with-rrtools.html). This one is especially useful if you are working to publish a big data-driven project, especially something that might be published in book form using [bookdown](https://bookdown.org). 
+Another and more robust solution than `sketchy` for creating compendia is the [`rrtools` package](https://github.com/benmarwick/rrtools) described [here](https://annakrystalli.me/rrresearchACCE20/creating-a-research-compendium-with-rrtools.html). This one is especially useful if you are working to publish a scientific paper out of a project. Also relevant here is `piggyback`, [a package](https://docs.ropensci.org/piggyback/articles/intro.html) that you can use if your dataset is too large for GitHub.
 
 # Appendix B: If you use python instead of R
 
@@ -227,3 +242,16 @@ The steps for preparing your project for binderization are similar to in R. The 
   * Loading the GH repo in Binder, whether through a link in your README or by copy/pasting the repo URL on mybinder.org. 
     
 [This tutorial](https://the-turing-way.netlify.app/communication/binder/zero-to-binder.html) can walk you through some of the specifics.
+
+# Works Cited
+
+Araya-Salas, M., Willink, B., Arriaga, A. (2020), sketchy: research compendiums for data analysis in R. R package version 1.0.0.
+
+Marwick, B., Boettiger, C., L. Mullen, L. (2018), “Packaging Data Analytical Work Reproducibly Using R (and Friends).” The American Statistician 72 (1): 80–88. https://doi.org/10.1080/00031305.2017.1375986.
+
+Moncrieff, G. (2020), "Reproducible R part 1." https://rstudio-pubs-static.s3.amazonaws.com/599947_7c545f28e24e4d21ab5dcbbb59210c63.html.
+
+Ram, K. (2023), holepunch: Make your R project Binder ready. R package version 0.1.29.9000.
+
+Wickham, H., Bryan, J., and Barrett, M. (2022), usethis: Automate Package and Project Setup. R package version 2.1.6. https://usethis.r-lib.org.
+
