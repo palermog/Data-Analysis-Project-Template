@@ -389,14 +389,14 @@
     },
     "holepunch": {
       "Package": "holepunch",
-      "Version": "0.1.28.9000",
+      "Version": "0.1.29.9000",
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
-      "RemoteRepo": "holepunch",
       "RemoteUsername": "karthik",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "c1c8e4a5dae21c9eeac91ade1b73316e37d0ac1a",
+      "RemoteRepo": "holepunch",
+      "RemoteRef": "master",
+      "RemoteSha": "031fd9619df85b0bc90cea1e36ba74d2b63f45dc",
       "Requirements": [
         "R",
         "cliapp",
@@ -414,9 +414,10 @@
         "renv",
         "rlang",
         "rprojroot",
+        "rversions",
         "usethis"
       ],
-      "Hash": "b2fdbe691a06b5f3f8f05de4a59d1d89"
+      "Hash": "7001046af2813f68e6e5519372714dda"
     },
     "htmltools": {
       "Package": "htmltools",
@@ -748,6 +749,18 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "690bd2acc42a9166ce34845884459320"
+    },
+    "rversions": {
+      "Package": "rversions",
+      "Version": "2.1.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "curl",
+        "utils",
+        "xml2"
+      ],
+      "Hash": "a9881dfed103e83f9de151dc17002cd1"
     },
     "sass": {
       "Package": "sass",
