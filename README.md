@@ -10,9 +10,9 @@ The template provides you with a basic directory structure for your research pro
 
 ## Getting Started
 
-1. Click the green "Use this template" in the upper-right-hand corner of the screen, and select "Create a new repository." Give it a good descriptive name for your project.
+1. Click the green "Use this template" button in the upper-right-hand corner of the screen. From there, select "Create a new repository." Give it a good descriptive name for your project.
 
-2. Clone your new repository to your local computer that has R and Studio installed. You can do this in a number of ways:
+2. Clone your new repository to your computer that has R and Studio installed. You can do this in a number of ways:
 
   - Using the [command line](https://docs.github.com/en/get-started/importing-your-projects-to-github/importing-source-code-to-github/adding-locally-hosted-code-to-github)
   - From within RStudio, by selecting the "Version Control" option when Creating a New Project, and then "Clone a project from a Git repository"
