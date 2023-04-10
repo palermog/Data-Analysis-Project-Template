@@ -1,18 +1,12 @@
 ---
-title: "Reproudicibility and Collaboration with R"
+title: "Reproducibility and Collaboration with R"
 author:
-- name: Gregory Palermo
-  affiliation: Emory University
-date: "6 April 2023"
+  - Gregory Palermo, Emory University
+date: "10 April 2023"
 output:
-  html_notebook:
-    toc: yes
-    toc_float: yes
-subtitle: |
-  Spring 2023
-  ENGRD/QTM 302W: Technical Writing for Data Science
-editor_options: 
-  chunk_output_type: console
+  github_document:
+    toc: true
+    html_preview: false
 ---
 
 # Introduction
@@ -89,7 +83,7 @@ Having cloned a project repository with this `renv` lockfile and this directory 
 
 Let's take the second option:
 
-```{r}
+```{r eval=FALSE}
 renv::hydrate()
 ```
 
@@ -131,7 +125,7 @@ While it's possible to write these files by hand if one knows what they're doing
 
 In order to install this package, we'll need to install the package "remotes," which will let us install packages that others have developed and are hosting GitHub, as opposed to being hosted on R's CRAN repository.
 
-```{r}
+```{r eval=FALSE}
 install.packages("remotes", type = "binary")
 remotes::install_github("karthik/holepunch", type = "binary")
 ```
@@ -148,7 +142,7 @@ In either case, these will tell binder what needs to be on your virtual computin
 
 While I'd most like to use (1), it turns out that `holepunch`'s Dockerfile-generating code doesn't currently play nicely with `renv`, which requires attention from the developer. (Advanced use case, indeed!) So, let's use `holepunch` to generate an `install.R` file and `runtime.txt` file.
 
-```{r}
+```{r eval=FALSE}
 # Creates `install.R`
 holepunch::write_install()
 
@@ -182,7 +176,7 @@ You could very well modify the `README.md` file by hand, but when using RStudio 
 
 Below is some code that creates a `README.Rmd` file from a template I've created for you. We can also use `holepunch` to add a badge to the README that links to binder.
 
-```{r}
+```{r eval=FALSE}
 rmarkdown::draft("README.Rmd",
                  template = "inst/rmarkdown/templates/readme")
 
@@ -193,7 +187,7 @@ You'll fill this out with information relevant to your project.
 
 For now, run the following code to generate a `README.md` file from it that will be visible on GitHub.
 
-```{r}
+```{r eval=FALSE}
 rmarkdown::render("README.Rmd")
 ```
 

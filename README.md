@@ -6,7 +6,7 @@
 
 This is a data analysis project template that I developed for students in my QTM/ENGRD 302W: Technical Writing for Data Science course, at Emory University, to put reproducibility concepts into practice (see Marwick et al. 2018; Moncrieff 2020).
 
-The template provides you with a basic directory structure for your research project, from which you can create your own repository here on GitHub to clone to your own computer. It contains instructions on using the package renv to manage a virtual environment with your project's package dependencies. Further, it walks through preparing your repository to work with [mybinder.org](https://mybinder.org), making use of the [holepunch package](https://karthik.github.io/holepunch/articles/getting_started.html) to generate the necessary files.
+The template provides you with a basic directory structure for your research project, from which you can create your own repository here on GitHub to clone to your own computer. Moreover, it contains instructions on using the package renv to manage a virtual environment with your project's package dependencies. Further, it walks through preparing your repository to work with [mybinder.org](https://mybinder.org), making use of the [holepunch package](https://karthik.github.io/holepunch/articles/getting_started.html) to generate the necessary files. You can read through this tutorial by clicking on `reproducibility.md` above.
 
 ## Getting Started
 
@@ -22,7 +22,7 @@ The template provides you with a basic directory structure for your research pro
 
 4. In the Files pane, open `reproducibility.Rmd` and follow along inside the document.
 
-5. After you do, delete or move `reproducibility.Rmd` and the directory `inst` before committing and pushing your local repo back to GitHub.
+5. After you do, delete or move `reproducibility.Rmd`, `reproducibility.md`, and the directory `inst` before committing and pushing your local repo back to GitHub.
   
 
 ## Works Cited
