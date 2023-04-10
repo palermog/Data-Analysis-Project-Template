@@ -4,9 +4,9 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-This is a template that I developed for students in QTM/ENGRD 302W: Technical Writing for Data Science at Emory University.
+This is a data analysis project template that I developed for students in the QTM/ENGRD 302W: Technical Writing for Data Science course at Emory University to put reproducibility concepts into practice (see Marwick et al. 2018; Moncrieff 2020).
 
-The template provides you with a basic directory structure for your data analysis research project, from which you can create your own repository here on GitHub to clone to your own computer. It contains instructions on using the package renv to manage a virtual environment with your project's package dependencies. Further, it walks through preparing your repository for working with [mybinder.org](https://mybinder.org), making use of the [holepunch package](https://karthik.github.io/holepunch/articles/getting_started.html) to generate the necessary files.
+The template provides you with a basic directory structure for your research project, from which you can create your own repository here on GitHub to clone to your own computer. It contains instructions on using the package renv to manage a virtual environment with your project's package dependencies. Further, it walks through preparing your repository to work with [mybinder.org](https://mybinder.org), making use of the [holepunch package](https://karthik.github.io/holepunch/articles/getting_started.html) to generate the necessary files.
 
 ## Getting Started
 
@@ -24,5 +24,9 @@ The template provides you with a basic directory structure for your data analysi
   
 
 ## Works Cited
+
+Marwick, B., Boettiger, C., L. Mullen, L. (2018), “Packaging Data Analytical Work Reproducibly Using R (and Friends).” The American Statistician 72 (1): 80–88. https://doi.org/10.1080/00031305.2017.1375986.
+
+Moncrieff, G. (2020), "Reproducible R part 1." https://rstudio-pubs-static.s3.amazonaws.com/599947_7c545f28e24e4d21ab5dcbbb59210c63.html.
 
 Ram, K. (2023), holepunch: Make your R project Binder ready. R package version 0.1.29.9000.
