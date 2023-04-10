@@ -29,4 +29,4 @@ Marwick, B., Boettiger, C., L. Mullen, L. (2018), “Packaging Data Analytical W
 
 Moncrieff, G. (2020), "Reproducible R part 1." https://rstudio-pubs-static.s3.amazonaws.com/599947_7c545f28e24e4d21ab5dcbbb59210c63.html.
 
-Ram, K. (2023), holepunch: Make your R project Binder ready. R package version 0.1.29.9000.
+Ram, K. (2023), holepunch: Make your R project Binder ready. R package version 0.1.29.9000. https://github.com/karthik/holepunch/
