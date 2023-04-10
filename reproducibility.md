@@ -490,10 +490,7 @@ R library [`sketchy`](https://marce10.github.io/sketchy/).
 
 I like this library over others because it has multiple options
 available for directory structures. How to use it is beyond our scope,
-but refer to the above documentation to get started. Installing it will
-require the `remotes` package to install the library from the
-developer’s GitHub account, which we will use below to install a
-different library.
+but refer to the above documentation to get started.
 
 If you really want to get into the weeds, you can also customize the
 developer’s provided structures by modifying the contents of the list
