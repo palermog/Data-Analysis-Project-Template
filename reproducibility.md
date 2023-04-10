@@ -548,6 +548,8 @@ Statistician 72 (1): 80–88.
 Moncrieff, G. (2020), “Reproducible R part 1.”
 <https://rstudio-pubs-static.s3.amazonaws.com/599947_7c545f28e24e4d21ab5dcbbb59210c63.html>.
 
+Ng, Rocio. “Sfbrigade/Data-Science-Wg.” (2023). Jupyter Notebook. SFBrigade. https://github.com/sfbrigade/data-science-wg/blob/f1625aba8ac51ad90ec008f8ebc5ca1c42b304d7/dswg_project_resources/Project-README-template.md.
+
 Ram, K. (2023), holepunch: Make your R project Binder ready. R package
 version 0.1.29.9000.
 
