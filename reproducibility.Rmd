@@ -122,7 +122,7 @@ This has some limitations—namely, it has limited computing power and it is pub
 
 ## Preparing your project for binder 
 
-Once we have a folder structure and git repository ready, we'll need to write a couple of configuration files. Binder uses these files to  software is necessary for our project—in our case, R and RStudio. These include:
+Once we have a folder structure and git repository ready, we'll need to write a couple of configuration files. Binder uses these files to create the virtuall machine with software necessary for our project—in our case, R and RStudio. These include:
 
 1. a file that provides some metadata about the project as a software "package" and also describes any packages it depends on, to install
 2. a file that tells binder what kind and version of virtual computing environment to run.
@@ -140,7 +140,7 @@ remotes::install_github("karthik/holepunch", type = "binary")
 
 There are two options we'll consider for the configuration files necessary for binder:
 
-1. a DESCRIPTION file and a Dockerfile. A DESCRIPTION file is usually used to provide information about an R package, but is used by researchers interested in open science to declare dependencies of data analysis projects. Docker is a platform that lets developers distrubte software in self-sufficient "containers" that are virtual computers. Binder makes use of Docker.
+1. a DESCRIPTION file and a Dockerfile. A DESCRIPTION file is usually used to provide information about an R package, but is used by researchers interested in open science to declare dependencies of data analysis projects. Docker is a platform that lets developers distribute software in self-sufficient "containers" that are virtual computers. Binder makes use of Docker.
 
 2. an `install.R` file and a `runtime.txt` files. The former has a list of packages to install and the latter a version of R. 
 
@@ -201,7 +201,7 @@ rmarkdown::render("README.Rmd")
 
 Now, it's almost time to back over to GitHub Desktop to commit and push your changes! Before you do, however, you might want to remove some of the stuff that you don't want to be visible to people viewing your repository, like this notebook and the `inst` directory including the README template.
 
-Remember that whenever you are going to commit changes to your public repository, you should:
+Remember that whenever you are going to commit changes and push them to your public repository, you should:
 
 - snapshot your `renv` lockfile
 - update the install and runtime files
@@ -209,9 +209,9 @@ Remember that whenever you are going to commit changes to your public repository
 
 It might be useful to have a little chunk of code in a script to do this.
 
-# Putting it all together
+Finally, do this now—navigate to your GitHub repository in your web browser and give the badge a click, which will open up binder! This will take a good long while, and is something that needs to happen whenever you push changes to your repository. So, it's a good idea, once you have pushed your changes, to click the binder badge to binderize your repository. That way, your user won't have to! (If you like to tinker, this is a [useful resource](https://github.com/andrewheiss/2019-05-14_reproducibility#example-methods) that lists some alternative options to this slower process.)
 
-Finally, navigate to your GitHub repository in your web browser and give the badge a click, which will open up binder! This will take a good long while, and is something that needs to happen whenever you push changes to your repository. So, you might . (If you like to tinker, this is a [useful resource](https://github.com/andrewheiss/2019-05-14_reproducibility#example-methods) that lists some other options.)
+# Putting it all together
 
 **So, what does this make possible?** Getting organized with your files and packages ensures consistency with people you are collaborating with, for your project in this class, and hopefully for other projects you will initiate in the future. A public repository provides a good place to direct other quantitative researchers who are interested in your work. It provides a good platform where you can provide access to your code for people to interact and tinker with, given low commitment.
 

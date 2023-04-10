@@ -2,7 +2,9 @@
 title: "My Data Analysis Project"
 author: "Your Name"
 date: "The Date"
-output: github_document
+output: 
+  github_document:
+    html_preview: FALSE
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
