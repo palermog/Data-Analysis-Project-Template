@@ -16,7 +16,7 @@ The template provides you with a basic directory structure for your research pro
 
   - Using the [command line](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
   - From within RStudio, by selecting the "Version Control" option when Creating a New Project, and then "Clone a project from a Git repository"
-  - Using [GitHub Desktop](https://desktop.github.com). After installing, you can click the "Code" button on your repository page and open it in GitHub Desktop from there. Otherwise, you can follow the [instructions here](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop).
+  - Using [GitHub Desktop](https://desktop.github.com). After installing, you can click the "Code" button on your repository page and open it in GitHub Desktop from there. Otherwise, you can follow the [instructions here](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop). 
   
 3. Rename the `.Rproj` file for your purposes and open it in RStudio.
 
