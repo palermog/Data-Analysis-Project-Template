@@ -525,19 +525,11 @@ environments](https://the-turing-way.netlify.app/reproducible-research/renv/renv
 
 ## Binderizing in python
 
-The steps for preparing your project for binderization are similar to in
-R. The steps involve: \* Preparing a compendium, either by hand or with
-the aid of a software package. \* Initializing a git repository, either
-in the command line using `git` or with a package like `GitPython`. \*
-Creating files that tell binder how to build a virtual environment from
-your repository, in the case of python a `requirements.txt` file. There
-are solutions, depending on your package manager (e.g., conda or pip)
-for generating these automatically from the packages installed in your
-environment. For conda environments, Binder uses the `environment.yml`
-requirements file described in the above tutorial. \* Creating a GH
-repository from your local repository. \* Loading the GH repo in Binder,
-whether through a link in your README or by copy/pasting the repo URL on
-mybinder.org.
+  * Preparing a compendium, either by hand or with the aid of a software package. 
+  * Initializing a git repository, either in the command line using `git` or with a package like `GitPython`. 
+  * Creating files that tell binder how to build a virtual environment from your repository, in the case of python a `requirements.txt` file. There are solutions, depending on your package manager (e.g., conda or pip) for generating these automatically from the packages installed in your environment. For conda environments, Binder uses the `environment.yml` requirements file described in the above tutorial. 
+  * Creating a GH repository from your local repository. 
+  * Loading the GH repo in Binder, whether through a link in your README or by copy/pasting the repo URL on mybinder.org. 
 
 [This
 tutorial](https://the-turing-way.netlify.app/communication/binder/zero-to-binder.html)
